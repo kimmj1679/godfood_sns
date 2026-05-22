@@ -18,3 +18,13 @@ html, body {
   display: flex;
   flex-direction: column;
 }
+
+/* 브라우저 자동완성 파란 배경 제거 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px #1e1e1e inset !important;
+  -webkit-text-fill-color: #ffffff !important;
+  caret-color: #ffffff !important;
+}

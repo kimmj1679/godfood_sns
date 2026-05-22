@@ -38,7 +38,10 @@ export function AuthProvider({ children }) {
     const { data, error } = await supabase.auth.signUp({
       email,
       password,
-      options: { data: { username, display_name: username } },
+      options: {
+        emailRedirectTo: 'https://kimmj1679.github.io/godfood_sns/',
+        data: { username, display_name: username },
+      },
     });
     return { data, error };
   }
