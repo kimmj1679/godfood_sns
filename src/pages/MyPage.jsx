@@ -9,7 +9,7 @@ import { useAuth } from '../context/AuthContext.jsx';
 
 function MyPage() {
   const navigate = useNavigate();
-  const { user, profile, signOut } = useAuth();
+  const { user, profile } = useAuth();
   const [posts, setPosts] = useState([]);
   const [tab, setTab] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -34,7 +34,7 @@ function MyPage() {
       <AppBar position='sticky' elevation={0} sx={{ bgcolor: 'background.paper', borderBottom: '1px solid', borderColor: 'divider' }}>
         <Toolbar>
           <Typography variant='body1' sx={{ fontWeight: 700, flex: 1, textAlign: 'center' }}>@{profile?.username || '...'}</Typography>
-          <IconButton onClick={signOut} sx={{ color: 'text.secondary' }}><Icon>settings</Icon></IconButton>
+          <IconButton onClick={() => navigate('/settings')} sx={{ color: 'text.secondary' }}><Icon>settings</Icon></IconButton>
         </Toolbar>
       </AppBar>
 
