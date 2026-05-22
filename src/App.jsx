@@ -7,6 +7,7 @@ import ExplorePage from './pages/ExplorePage.jsx';
 import PostCreatePage from './pages/PostCreatePage.jsx';
 import PostDetailPage from './pages/PostDetailPage.jsx';
 import MyPage from './pages/MyPage.jsx';
+import ProfileEditPage from './pages/ProfileEditPage.jsx';
 
 function PrivateRoute({ children }) {
   const { user, loading } = useAuth();
@@ -25,6 +26,7 @@ function App() {
           <Route path='create' element={<PostCreatePage />} />
           <Route path='post/:id' element={<PostDetailPage />} />
           <Route path='my' element={<MyPage />} />
+          <Route path='profile/edit' element={<ProfileEditPage />} />
         </Route>
       </Routes>
     </HashRouter>

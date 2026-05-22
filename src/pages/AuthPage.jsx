@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import {
   Box, Container, Typography, TextField, Button,
   Tab, Tabs, Alert, InputAdornment, IconButton, CircularProgress, Icon,
@@ -6,7 +7,12 @@ import {
 import { useAuth } from '../context/AuthContext.jsx';
 
 function AuthPage() {
-  const { signIn, signUp } = useAuth();
+  const navigate = useNavigate();
+  const { user, signIn, signUp } = useAuth();
+
+  useEffect(() => {
+    if (user) navigate('/', { replace: true });
+  }, [user]);
   const [tab, setTab] = useState(0);
   const [showPw, setShowPw] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -20,6 +26,7 @@ function AuthPage() {
     setLoading(true);
     const { error } = await signIn(loginForm.email, loginForm.password);
     if (error) setError(error.message);
+    else navigate('/', { replace: true });
     setLoading(false);
   }
 

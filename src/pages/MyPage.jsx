@@ -53,7 +53,7 @@ function MyPage() {
           <Typography variant='body2' sx={{ fontWeight: 700, color: 'text.primary' }}>{profile?.display_name || profile?.username || '이름 없음'}</Typography>
           {profile?.bio && <Typography variant='body2' sx={{ color: 'text.secondary', mt: 0.5, lineHeight: 1.5 }}>{profile.bio}</Typography>}
         </Box>
-        <Button variant='outlined' fullWidth sx={{ borderColor: '#2a2a2a', color: 'text.primary', fontWeight: 600, '&:hover': { borderColor: '#aaff00', color: '#aaff00' } }}>프로필 편집</Button>
+        <Button onClick={() => navigate('/profile/edit')} variant='outlined' fullWidth sx={{ borderColor: '#2a2a2a', color: 'text.primary', fontWeight: 600, '&:hover': { borderColor: '#aaff00', color: '#aaff00' } }}>프로필 편집</Button>
       </Box>
 
       <Divider sx={{ borderColor: 'divider' }} />
