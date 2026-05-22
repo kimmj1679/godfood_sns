@@ -2,21 +2,28 @@ import { createTheme } from '@mui/material/styles';
 
 const theme = createTheme({
   palette: {
-    primary: {
-      main: '#1976d2',
-    },
-    secondary: {
-      main: '#dc004e',
-    },
+    mode: 'dark',
+    primary: { main: '#aaff00' },
+    background: { default: '#0a0a0a', paper: '#121212' },
+    divider: '#2a2a2a',
+    text: { primary: '#ffffff', secondary: '#888888' },
   },
   typography: {
-    fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
-    h1: {
-      fontSize: '2.125rem',
-      fontWeight: 500,
+    fontFamily: '"Pretendard", "Noto Sans KR", "Roboto", sans-serif',
+  },
+  components: {
+    MuiBottomNavigation: {
+      styleOverrides: { root: { backgroundColor: '#121212' } },
+    },
+    MuiBottomNavigationAction: {
+      styleOverrides: {
+        root: {
+          color: '#666666',
+          '&.Mui-selected': { color: '#aaff00' },
+        },
+      },
     },
   },
-  spacing: 8,
 });
 
 export default theme;
